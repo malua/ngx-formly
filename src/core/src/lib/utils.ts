@@ -45,7 +45,8 @@ export function assignFieldValue(field: FormlyFieldConfigCache, value: any, auto
     return;
   }
 
-  assignModelValue(field.model, paths, value);
+  
+  Value(field.model, paths, value);
 }
 
 export function assignModelValue(model: any, paths: string[], value: any) {
@@ -57,7 +58,7 @@ export function assignModelValue(model: any, paths: string[], value: any) {
 
     model = model[path];
   }
-
+  model = {...model};
   model[paths[paths.length - 1]] = clone(value);
 }
 
